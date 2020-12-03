@@ -1,0 +1,140 @@
+---
+title: "Tutorium Session 2"
+output: html_notebook
+date: "03-12-2020"
+daily quote: "yeah yeah yeah... party party party"
+editor_options: 
+  chunk_output_type: inline
+---
+
+#### Packages ####
+
+package:
+- Sammlung verschiedener Funktionen, die das base-R "ergänzen"
+- muss installiert werden
+- muss bei jedem neuen Programmstart von R-Studio geladen werden 
+- CRAN -> riesige Sammlung verschiedener packages (kostenfrei)
+
+
+```{r}
+
+#### package installieren
+
+install.packages("fun")  ## Name des packages immer in " ", -> nur EINMAL notwendig
+
+
+#### package laden
+
+library(fun) ## hier OHNE " ", -> muss bei jedem Neustart von RStudio geladen werden (Nur die p laden, die man für das script wirklich braucht)
+
+```
+
+
+Tidyverse:
+
+- Sammlung verschiedener packages zur leichteren Datenaufbereitung
+
+
+```{r}
+
+install.packages("tidyverse")
+
+library(tidyverse) 
+
+## ist dasselbe wie:
+
+library(dplyr)
+library(readr)
+library(tibble)
+
+## ... alle Einzelpakete im tidyverse enthalten
+
+```
+
+### Datensätze ###
+
+- verschiedene Vektoren gleicher Länge werden zu einem "dataframe" zusammengepackt
+- dabei können die Vektoren auch unterschiedlicher Art sein (große Tabelle vorstellen mit verschiedenen Spalten -> eine Spalte = ein Vektor)
+
+- (in R entweder als dataframe, data.table, tibble -> tibble im tidyverse)
+
+```{r}
+
+### Dataframes/ tibble erstellen
+
+library(tidyverse) ## tidyverse laden
+
+booklist <- tibble(title = c("The Colour of Magic", "Mort", "Guards! Guards!", "Men at Arms", "Hogfather", "Night Watch", "Raising Steam", 
+                              "Thud", "Unseen Academicals", "Monstrous Regiment"),
+                    type = c("paperback", "paperback", "hardcover", "paperback", "hardcover", "hardcover", "paperback", "hardcover",
+                             "paperback", "hardcover"),
+                    price = c(9.99, 9.99, 14.99, 10.99, 15.99, 14.99, 8.99, 15.99, 9.99, 19.99))
+
+          ## Bezeichnung des Datensatzes <- tibble( "Name 1. Spalte" = c(die Daten in Reihenfolge), 
+          ##                                        "Name 2. Spalte" = c( Daten der 2. Spalte in Reihenfolge usw))
+
+booklist
+
+## Überblick verschaffen -> WICHTIG !
+
+glimpse(booklist) ## -> aus dem tidyverse
+summary(booklist)
+str(booklist) ## -> ziemlich ähnlich zu glimpse()
+
+
+```
+
+- Überblick über die Daten verschaffen ist wichtig! Macht das am besten immer am Anfang
+- eine Funktion dafür reicht oft aus
+
+
+## Spalten hinzufügen
+
+- braucht man immer mal wieder
+- Variante 1: mutate() -> tidyverse
+- Variante 2: mit $
+
+
+```{r}
+
+## Variante 1: 
+
+booklist_extended <- booklist %>%  ## pipe = Str + Umschalt + m
+            mutate( available = c("y", "y", "n", "y", "n", "y", "n", "y", "y", "n"))
+
+
+## Variante 2:
+
+booklist$available <- c("y", "y", "n", "y", "n", "y", "n", "y", "y", "n")
+
+
+```
+
+
+- $-Operator wählt immer eine bestimmte Spalte eines Datensatzes aus
+Beispiel:
+
+```{r}
+
+booklist$price
+
+```
+
+
+Sortieren
+
+```{r}
+
+booklist <- booklist %>% 
+            arrange(price) ## desc bei absteigender Reihenfolge
+
+booklist %>% 
+  select(type, price)
+
+booklist %>% 
+  filter( price == 9.99)
+
+```
+
+
+

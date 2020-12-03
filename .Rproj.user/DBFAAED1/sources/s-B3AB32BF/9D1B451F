@@ -1,0 +1,32 @@
+{
+    "id": "9D1B451F",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1606961736083.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "expression": "booklist",
+        "caption": "booklist",
+        "totalObservations": "10",
+        "displayedObservations": "10",
+        "variables": "4",
+        "cacheKey": "9D42BCAF",
+        "object": "booklist",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=booklist&cache_key=9D42BCAF&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 8390880559209668980,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1606961736083,
+    "read_only": false,
+    "read_only_alternatives": []
+}
