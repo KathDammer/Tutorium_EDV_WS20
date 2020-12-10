@@ -2,7 +2,7 @@
 title: "Tutorium Session 3"
 output: html_notebook
 date: "10-12-2020"
-daily quote: "yeah yeah yeah... party party party"
+daily quote: "sometimes taking time is actually a shortcut"
 ---
 
 Übung 3
@@ -120,5 +120,27 @@ Schlaubi_Schlumpf <-IQ_data_tidy %>%
 
 
 print(Schlaubi_Schlumpf)
+```
+
+Aufgabe 4
+
+gesamten Datensatz in absteigender Reihenfolge des IQs ausgeben
+
+```{r}
+
+IQ_data_sortiert<-IQ_data_tidy %>% arrange(desc(IQ))
+
+```
+
+Kovarianz- und Korrelationsmatrix erstellen
+
+```{r}
+Kovarianzmatrix<- IQ_data_sortiert %>% 
+                      select(4,5,6,7) %>% ## Welche Spalten werden benötigt 
+                      cov()
+
+Korrelationsmatrix<- IQ_data_sortiert %>% 
+                      select(4,5,6,7) %>% 
+                      cor()
 ```
 
