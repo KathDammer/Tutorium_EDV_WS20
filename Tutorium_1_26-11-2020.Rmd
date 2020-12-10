@@ -187,20 +187,23 @@ as.character(final_grade)
 ```
 
 
-Aufgabe 3: Zahlenfolgen erstellen
+Aufgabe 3: Zahlenfolgen erstellen 
 
 ```{r}
 ## die Zahlen von 1 bis 50
 
-first<- 1:50
+first <- 1:50
 
 ## 10 Zahlen in gleichmäßigen Abständen zwischen 1 und 50
 
 second<- seq(from = 1, to = 50, length.out = 10) ## von 1 bis 50, length.out = wie viele Werte, by= in welchen Schritten
 
+second
+
 ##  alle Zahlen zwischen 1 und 10 in Schritten von .1
 
 third<- seq(from = 1, to = 10, by = .1)
+third
 ```
 
 
@@ -252,8 +255,13 @@ Berechnen Sie abschließend die Menge der wahren Werte im logIdx nachdem Sie die
 ## von logical in numeric
 in_numerisch <- as.numeric(log_Index)
 
+
+in_numerisch
+
 ## Menge berechnen
 Summe <-sum(in_numerisch)
+
+Summe
 
 ##  als Zeichenkette
 
@@ -292,6 +300,7 @@ name[grade_presentation <=3 & grade_test <=3]
 
 sort(name, decreasing = F)
 
+
 ## die in Aufgabe 2 erstellte Gesamtnote von Eccentrica
 
 final_grade[name == "Eccentrica"]
@@ -303,7 +312,7 @@ better_than<- final_grade[final_grade <= 3]
 
 length(better_than)
 
-```
+``` 
 
 
 

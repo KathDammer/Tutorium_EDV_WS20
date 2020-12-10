@@ -7,6 +7,25 @@ editor_options:
   chunk_output_type: inline
 ---
 
+Fragen zur letzten Woche
+
+```{r}
+
+log_vec <- c(T, T, T, F, F, F, T)
+
+log_vec <- as.numeric(log_vec)
+
+
+```
+
+
+
+
+
+
+
+
+
 #### Packages ####
 
 package:
@@ -75,6 +94,8 @@ booklist <- tibble(title = c("The Colour of Magic", "Mort", "Guards! Guards!", "
 
 booklist
 
+data.frame
+
 ## Überblick verschaffen -> WICHTIG !
 
 glimpse(booklist) ## -> aus dem tidyverse
@@ -100,7 +121,7 @@ str(booklist) ## -> ziemlich ähnlich zu glimpse()
 ## Variante 1: 
 
 booklist_extended <- booklist %>%  ## pipe = Str + Umschalt + m
-            mutate( available = c("y", "y", "n", "y", "n", "y", "n", "y", "y", "n"))
+                      mutate(available = c("y", "y", "n", "y", "n", "y", "n", "y", "y", "n"))
 
 
 ## Variante 2:
@@ -126,8 +147,8 @@ Sortieren
 ```{r}
 
 booklist <- booklist %>% 
-            arrange(price) ## desc bei absteigender Reihenfolge
-
+            arrange(price, desc = T) ## desc bei absteigender Reihenfolge
+)
 booklist %>% 
   select(type, price)
 
