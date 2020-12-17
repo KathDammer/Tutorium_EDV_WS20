@@ -18,7 +18,7 @@ VPNumber<- c(1:100)
 sex<-  sample(c("m", "f"), size = 100, replace = TRUE) ## sample(c(Vektor mit den Werten, die zufällig sein sollen)
                                                       ## size = wie viele Elemente?, replace = mit zurücklegen (T = Ja)
 
-age<- sample(c(18:30), size=100, replace = T)
+age<- sample(18:30, size=100, replace = T)
 
 verbal_score<- sample(c(1:9), size=100, T)
 
@@ -48,6 +48,7 @@ Iq_data_in_Kurz<- tibble(VPNumber_short = (c(1:100)),
 ```{r}
 
 summary(Iq_data_in_Kurz)
+str(Iq_data_in_Kurz)
 
 ```
  
@@ -56,17 +57,20 @@ Fügen Sie folgende zusätzlichen Vektoren hinzu
 
 ```{r}
 ## Erstmal Mittelwert von beiden
+
+IQ_data$verbal_score ## Datensatz$Spalte
+
 means <- (IQ_data$verbal_score+IQ_data$logic_score)/2
 
 ## Zum Datensatz hinzufügen
 IQ_data$stanine_IQ<- means
 
 ## oder gleich
-IQ_data$stanine_IQ<- (IQ_data$verbal_score+IQ_data$logic_score)/2
+IQ_data$stanine_IQ <- (IQ_data$verbal_score+IQ_data$logic_score)/2
 
 ######### zweite Variante ####
 
-IQ_data <- IQ_data %>% 
+IQ_data<-IQ_data %>% 
   mutate(stanine_IQ = (verbal_score+ logic_score)/2)
 
 ```
@@ -74,7 +78,7 @@ IQ_data <- IQ_data %>%
 Von stanine_IQ in IQ
 
 ```{r}
-z_score<- scale(IQ_data$stanine_IQ)
+z_score<- scale(IQ_data$stanine_IQ) ##Z-Transformation mit scale()
 
 IQ<- z_score * 15 + 100
 
@@ -84,7 +88,7 @@ IQ_data$IQ<- IQ
 
 IQ_data_tidy <- Iq_data_in_Kurz %>% 
   mutate(stanine_IQ = (verbal_score_short + logic_score_short)/2, 
-          IQ = (stanine_IQ - 5)/1.96,
+          IQ = scale(stanine_IQ),
           IQ = round(IQ * 15 + 100))
 ```
 
@@ -96,27 +100,40 @@ Logische Indizierung
 ```{r}
 
 IQ_data_extended<-IQ_data %>% 
-  mutate(lower_IQ =  IQ <= 85,
-         high_IQ = IQ >116 & IQ <130,
-         mid_IQ = !lower_IQ & !high_IQ)
+  mutate(lower_IQ =  IQ <= 84,
+         high_IQ = IQ >= 116 & IQ <130,
+          mid_IQ = !lower_IQ & !high_IQ)
 
 ## Ifelse-Funktion
 
 IQ_data_extended<-IQ_data_extended %>% 
 mutate(verbal = ifelse(lower_IQ,'low','mid'),
        verbal = ifelse(high_IQ,'high', verbal)) %>%
-      select(-contains('iq_'))
+      select(-c(lower_IQ, high_IQ))
 
 
 ## cut-funktion
 
-IQ_data_tidy$Category <- cut(IQ_data_tidy$IQ, breaks = c(-Inf, 84,115, 130), 
-    labels =c("unterdurchschnittlich", "durchschnittlich", "überdurchschnittlich"), right = TRUE)
+IQ_data_tidy$Category <- cut(IQ_data_tidy$IQ,
+                             breaks = c(-Inf, 84,115, Inf), 
+                            labels =c("unterdurchschnittlich", "durchschnittlich", "überdurchschnittlich"), right = TRUE)
 
+#cut(shower_data$showerTime, ## Datensatz, wichtig: Welche Daten sollen aufgeteilt werden?
+#    breaks = c(0, 3, 10, Inf), ## In welche Abschnitte soll geteilt werden?
+#    labels = c("Sportduscher", "Normalduscher", "Dauerduscher")) ## wie sollen die Kategorien benannt werden?
 
-Schlaubi_Schlumpf <-IQ_data_tidy %>% 
-  select(1,2,3) %>% 
+str(IQ_data_tidy)
+
+Schlaubi_Schlumpf <-IQ_data_tidy %>%  ##Fehler bitte ausbessern
+  select(1,2,3) %>% ## Fehler: Nicht erst select und dann filter! 
   filter(Category == "überdurchschnittlich")
+
+## Richtige Variante:
+
+Schlaubi_Schlumpf<- IQ_data_tidy %>% 
+  filter(Category == "Überdurchschnittlich") %>% 
+  select(1,2,3)
+
 
 
 print(Schlaubi_Schlumpf)

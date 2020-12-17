@@ -1802,7 +1802,7 @@ summary {
 <p>Aufgabe 1: - Erstellen Sie einen tibble mit folgenden Spalten in R</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMgRXJzdG1hbCBkaWUgVmVrdG9yZW4gZXJzdGVsbGVuXG5cblZQTnVtYmVyPC0gYygxOjEwMClcblxuc2V4PC0gIHNhbXBsZShjKFwibVwiLCBcImZcIiksIHNpemUgPSAxMDAsIHJlcGxhY2UgPSBUUlVFKSAjIyBzYW1wbGUoYyhWZWt0b3IgbWl0IGRlbiBXZXJ0ZW4sIGRpZSB6dWbDpGxsaWcgc2VpbiBzb2xsZW4pXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIyBzaXplID0gd2llIHZpZWxlIEVsZW1lbnRlPywgcmVwbGFjZSA9IG1pdCB6dXLDvGNrbGVnZW4gKFQgPSBKYSlcblxuYWdlPC0gc2FtcGxlKGMoMTg6MzApLCBzaXplPTEwMCwgcmVwbGFjZSA9IFQpXG5cbnZlcmJhbF9zY29yZTwtIHNhbXBsZShjKDE6OSksIHNpemU9MTAwLCBUKVxuXG5sb2dpY19zY29yZTwtIHNhbXBsZShjKDE6OSksIDEwMCwgVClcblxuXG4jIyBlcnN0bWFsIHRpZHl2ZXJzZSBsYWRlbiFcbmxpYnJhcnkodGlkeXZlcnNlKVxuXG4jIyBkYW5uIHRpYmJsZSBlcnN0ZWxsZW5cblxuSVFfZGF0YTwtIHRpYmJsZShWUE51bWJlciwgc2V4LCBhZ2UsIHZlcmJhbF9zY29yZSwgbG9naWNfc2NvcmUpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMgRXJzdG1hbCBkaWUgVmVrdG9yZW4gZXJzdGVsbGVuXG5cblZQTnVtYmVyPC0gYygxOjEwMClcblxuc2V4PC0gIHNhbXBsZShjKFwibVwiLCBcImZcIiksIHNpemUgPSAxMDAsIHJlcGxhY2UgPSBUUlVFKSAjIyBzYW1wbGUoYyhWZWt0b3IgbWl0IGRlbiBXZXJ0ZW4sIGRpZSB6dWbDpGxsaWcgc2VpbiBzb2xsZW4pXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIyBzaXplID0gd2llIHZpZWxlIEVsZW1lbnRlPywgcmVwbGFjZSA9IG1pdCB6dXLDvGNrbGVnZW4gKFQgPSBKYSlcblxuYWdlPC0gc2FtcGxlKDE4OjMwLCBzaXplPTEwMCwgcmVwbGFjZSA9IFQpXG5cbnZlcmJhbF9zY29yZTwtIHNhbXBsZShjKDE6OSksIHNpemU9MTAwLCBUKVxuXG5sb2dpY19zY29yZTwtIHNhbXBsZShjKDE6OSksIDEwMCwgVClcblxuXG4jIyBlcnN0bWFsIHRpZHl2ZXJzZSBsYWRlbiFcbmxpYnJhcnkodGlkeXZlcnNlKVxuXG4jIyBkYW5uIHRpYmJsZSBlcnN0ZWxsZW5cblxuSVFfZGF0YTwtIHRpYmJsZShWUE51bWJlciwgc2V4LCBhZ2UsIHZlcmJhbF9zY29yZSwgbG9naWNfc2NvcmUpXG5gYGAifQ== -->
 <pre class="r"><code>## Erstmal die Vektoren erstellen
 
 VPNumber&lt;- c(1:100)
@@ -1810,7 +1810,7 @@ VPNumber&lt;- c(1:100)
 sex&lt;-  sample(c(&quot;m&quot;, &quot;f&quot;), size = 100, replace = TRUE) ## sample(c(Vektor mit den Werten, die zufällig sein sollen)
                                                       ## size = wie viele Elemente?, replace = mit zurücklegen (T = Ja)
 
-age&lt;- sample(c(18:30), size=100, replace = T)
+age&lt;- sample(18:30, size=100, replace = T)
 
 verbal_score&lt;- sample(c(1:9), size=100, T)
 
@@ -1841,9 +1841,10 @@ IQ_data&lt;- tibble(VPNumber, sex, age, verbal_score, logic_score)</code></pre>
 <p>Nochmal kurz Überblick verschaffen:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5zdW1tYXJ5KElxX2RhdGFfaW5fS3VyeilcblxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5zdW1tYXJ5KElxX2RhdGFfaW5fS3VyeilcbnN0cihJcV9kYXRhX2luX0t1cnopXG5cbmBgYCJ9 -->
 <pre class="r"><code>
 summary(Iq_data_in_Kurz)
+str(Iq_data_in_Kurz)
 </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
@@ -1851,19 +1852,22 @@ summary(Iq_data_in_Kurz)
 <p>Aufgabe 2: Fügen Sie folgende zusätzlichen Vektoren hinzu</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMgRXJzdG1hbCBNaXR0ZWx3ZXJ0IHZvbiBiZWlkZW5cbm1lYW5zIDwtIChJUV9kYXRhJHZlcmJhbF9zY29yZStJUV9kYXRhJGxvZ2ljX3Njb3JlKS8yXG5cbiMjIFp1bSBEYXRlbnNhdHogaGluenVmw7xnZW5cbklRX2RhdGEkc3RhbmluZV9JUTwtIG1lYW5zXG5cbiMjIG9kZXIgZ2xlaWNoXG5JUV9kYXRhJHN0YW5pbmVfSVE8LSAoSVFfZGF0YSR2ZXJiYWxfc2NvcmUrSVFfZGF0YSRsb2dpY19zY29yZSkvMlxuXG4jIyMjIyMjIyMgendlaXRlIFZhcmlhbnRlICMjIyNcblxuSVFfZGF0YSA8LSBJUV9kYXRhICU+JSBcbiAgbXV0YXRlKHN0YW5pbmVfSVEgPSAodmVyYmFsX3Njb3JlKyBsb2dpY19zY29yZSkvMilcblxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMgRXJzdG1hbCBNaXR0ZWx3ZXJ0IHZvbiBiZWlkZW5cblxuSVFfZGF0YSR2ZXJiYWxfc2NvcmUgIyMgRGF0ZW5zYXR6JFNwYWx0ZVxuXG5tZWFucyA8LSAoSVFfZGF0YSR2ZXJiYWxfc2NvcmUrSVFfZGF0YSRsb2dpY19zY29yZSkvMlxuXG4jIyBadW0gRGF0ZW5zYXR6IGhpbnp1ZsO8Z2VuXG5JUV9kYXRhJHN0YW5pbmVfSVE8LSBtZWFuc1xuXG4jIyBvZGVyIGdsZWljaFxuSVFfZGF0YSRzdGFuaW5lX0lRIDwtIChJUV9kYXRhJHZlcmJhbF9zY29yZStJUV9kYXRhJGxvZ2ljX3Njb3JlKS8yXG5cbiMjIyMjIyMjIyB6d2VpdGUgVmFyaWFudGUgIyMjI1xuXG5JUV9kYXRhPC1JUV9kYXRhICU+JSBcbiAgbXV0YXRlKHN0YW5pbmVfSVEgPSAodmVyYmFsX3Njb3JlKyBsb2dpY19zY29yZSkvMilcblxuYGBgIn0= -->
 <pre class="r"><code>## Erstmal Mittelwert von beiden
+
+IQ_data$verbal_score ## Datensatz$Spalte
+
 means &lt;- (IQ_data$verbal_score+IQ_data$logic_score)/2
 
 ## Zum Datensatz hinzufügen
 IQ_data$stanine_IQ&lt;- means
 
 ## oder gleich
-IQ_data$stanine_IQ&lt;- (IQ_data$verbal_score+IQ_data$logic_score)/2
+IQ_data$stanine_IQ &lt;- (IQ_data$verbal_score+IQ_data$logic_score)/2
 
 ######### zweite Variante ####
 
-IQ_data &lt;- IQ_data %&gt;% 
+IQ_data&lt;-IQ_data %&gt;% 
   mutate(stanine_IQ = (verbal_score+ logic_score)/2)
 </code></pre>
 <!-- rnb-source-end -->
@@ -1872,8 +1876,8 @@ IQ_data &lt;- IQ_data %&gt;%
 <p>Von stanine_IQ in IQ</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuel9zY29yZTwtIHNjYWxlKElRX2RhdGEkc3RhbmluZV9JUSlcblxuSVE8LSB6X3Njb3JlICogMTUgKyAxMDBcblxuSVFfZGF0YSRJUTwtIElRXG5cbiMjIyMjIyMgb2RlciB0aWR5dmVyc2UtVmFyaWFudGUgIyMjXG5cbklRX2RhdGFfdGlkeSA8LSBJcV9kYXRhX2luX0t1cnogJT4lIFxuICBtdXRhdGUoc3RhbmluZV9JUSA9ICh2ZXJiYWxfc2NvcmVfc2hvcnQgKyBsb2dpY19zY29yZV9zaG9ydCkvMiwgXG4gICAgICAgICAgSVEgPSAoc3RhbmluZV9JUSAtIDUpLzEuOTYsXG4gICAgICAgICAgSVEgPSByb3VuZChJUSAqIDE1ICsgMTAwKSlcbmBgYCJ9 -->
-<pre class="r"><code>z_score&lt;- scale(IQ_data$stanine_IQ)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuel9zY29yZTwtIHNjYWxlKElRX2RhdGEkc3RhbmluZV9JUSkgIyNaLVRyYW5zZm9ybWF0aW9uIG1pdCBzY2FsZSgpXG5cbklRPC0gel9zY29yZSAqIDE1ICsgMTAwXG5cbklRX2RhdGEkSVE8LSBJUVxuXG4jIyMjIyMjIG9kZXIgdGlkeXZlcnNlLVZhcmlhbnRlICMjI1xuXG5JUV9kYXRhX3RpZHkgPC0gSXFfZGF0YV9pbl9LdXJ6ICU+JSBcbiAgbXV0YXRlKHN0YW5pbmVfSVEgPSAodmVyYmFsX3Njb3JlX3Nob3J0ICsgbG9naWNfc2NvcmVfc2hvcnQpLzIsIFxuICAgICAgICAgIElRID0gc2NhbGUoc3RhbmluZV9JUSksXG4gICAgICAgICAgSVEgPSByb3VuZChJUSAqIDE1ICsgMTAwKSlcbmBgYCJ9 -->
+<pre class="r"><code>z_score&lt;- scale(IQ_data$stanine_IQ) ##Z-Transformation mit scale()
 
 IQ&lt;- z_score * 15 + 100
 
@@ -1883,7 +1887,7 @@ IQ_data$IQ&lt;- IQ
 
 IQ_data_tidy &lt;- Iq_data_in_Kurz %&gt;% 
   mutate(stanine_IQ = (verbal_score_short + logic_score_short)/2, 
-          IQ = (stanine_IQ - 5)/1.96,
+          IQ = scale(stanine_IQ),
           IQ = round(IQ * 15 + 100))</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
@@ -1892,39 +1896,77 @@ IQ_data_tidy &lt;- Iq_data_in_Kurz %&gt;%
 <p>Logische Indizierung</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5JUV9kYXRhX2V4dGVuZGVkPC1JUV9kYXRhICU+JSBcbiAgbXV0YXRlKGxvd2VyX0lRID0gIElRIDw9IDg1LFxuICAgICAgICAgaGlnaF9JUSA9IElRID4xMTYgJiBJUSA8MTMwLFxuICAgICAgICAgbWlkX0lRID0gIWxvd2VyX0lRICYgIWhpZ2hfSVEpXG5cbiMjIElmZWxzZS1GdW5rdGlvblxuXG5JUV9kYXRhX2V4dGVuZGVkPC1JUV9kYXRhX2V4dGVuZGVkICU+JSBcbm11dGF0ZSh2ZXJiYWwgPSBpZmVsc2UobG93ZXJfSVEsJ2xvdycsJ21pZCcpLFxuICAgICAgIHZlcmJhbCA9IGlmZWxzZShoaWdoX0lRLCdoaWdoJywgdmVyYmFsKSkgJT4lXG4gICAgICBzZWxlY3QoLWNvbnRhaW5zKCdpcV8nKSlcblxuXG4jIyBjdXQtZnVua3Rpb25cblxuSVFfZGF0YV90aWR5JENhdGVnb3J5IDwtIGN1dChJUV9kYXRhX3RpZHkkSVEsIGJyZWFrcyA9IGMoLUluZiwgODQsMTE1LCAxMzApLCBcbiAgICBsYWJlbHMgPWMoXCJ1bnRlcmR1cmNoc2Nobml0dGxpY2hcIiwgXCJkdXJjaHNjaG5pdHRsaWNoXCIsIFwiw7xiZXJkdXJjaHNjaG5pdHRsaWNoXCIpLCByaWdodCA9IFRSVUUpXG5cblxuU2NobGF1YmlfU2NobHVtcGYgPC1JUV9kYXRhX3RpZHkgJT4lIFxuICBzZWxlY3QoMSwyLDMpICU+JSBcbiAgZmlsdGVyKENhdGVnb3J5ID09IFwiw7xiZXJkdXJjaHNjaG5pdHRsaWNoXCIpXG5cblxucHJpbnQoU2NobGF1YmlfU2NobHVtcGYpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5JUV9kYXRhX2V4dGVuZGVkPC1JUV9kYXRhICU+JSBcbiAgbXV0YXRlKGxvd2VyX0lRID0gIElRIDw9IDg0LFxuICAgICAgICAgaGlnaF9JUSA9IElRID49IDExNiAmIElRIDwxMzAsXG4gICAgICAgICAgbWlkX0lRID0gIWxvd2VyX0lRICYgIWhpZ2hfSVEpXG5cbiMjIElmZWxzZS1GdW5rdGlvblxuXG5JUV9kYXRhX2V4dGVuZGVkPC1JUV9kYXRhX2V4dGVuZGVkICU+JSBcbm11dGF0ZSh2ZXJiYWwgPSBpZmVsc2UobG93ZXJfSVEsJ2xvdycsJ21pZCcpLFxuICAgICAgIHZlcmJhbCA9IGlmZWxzZShoaWdoX0lRLCdoaWdoJywgdmVyYmFsKSkgJT4lXG4gICAgICBzZWxlY3QoLWMobG93ZXJfSVEsIGhpZ2hfSVEpKVxuXG5cbiMjIGN1dC1mdW5rdGlvblxuXG5JUV9kYXRhX3RpZHkkQ2F0ZWdvcnkgPC0gY3V0KElRX2RhdGFfdGlkeSRJUSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgYnJlYWtzID0gYygtSW5mLCA4NCwxMTUsIEluZiksIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxhYmVscyA9YyhcInVudGVyZHVyY2hzY2huaXR0bGljaFwiLCBcImR1cmNoc2Nobml0dGxpY2hcIiwgXCLDvGJlcmR1cmNoc2Nobml0dGxpY2hcIiksIHJpZ2h0ID0gVFJVRSlcblxuI2N1dChzaG93ZXJfZGF0YSRzaG93ZXJUaW1lLCAjIyBEYXRlbnNhdHosIHdpY2h0aWc6IFdlbGNoZSBEYXRlbiBzb2xsZW4gYXVmZ2V0ZWlsdCB3ZXJkZW4/XG4jICAgIGJyZWFrcyA9IGMoMCwgMywgMTAsIEluZiksICMjIEluIHdlbGNoZSBBYnNjaG5pdHRlIHNvbGwgZ2V0ZWlsdCB3ZXJkZW4/XG4jICAgIGxhYmVscyA9IGMoXCJTcG9ydGR1c2NoZXJcIiwgXCJOb3JtYWxkdXNjaGVyXCIsIFwiRGF1ZXJkdXNjaGVyXCIpKSAjIyB3aWUgc29sbGVuIGRpZSBLYXRlZ29yaWVuIGJlbmFubnQgd2VyZGVuP1xuXG5zdHIoSVFfZGF0YV90aWR5KVxuXG5TY2hsYXViaV9TY2hsdW1wZiA8LUlRX2RhdGFfdGlkeSAlPiUgICMjRmVobGVyIGJpdHRlIGF1c2Jlc3Nlcm5cbiAgc2VsZWN0KDEsMiwzKSAlPiUgIyMgRmVobGVyOiBOaWNodCBlcnN0IHNlbGVjdCB1bmQgZGFubiBmaWx0ZXIhIFxuICBmaWx0ZXIoQ2F0ZWdvcnkgPT0gXCLDvGJlcmR1cmNoc2Nobml0dGxpY2hcIilcblxuIyMgUmljaHRpZ2UgVmFyaWFudGU6XG5cblNjaGxhdWJpX1NjaGx1bXBmPC0gSVFfZGF0YV90aWR5ICU+JSBcbiAgZmlsdGVyKENhdGVnb3J5ID09IFwiw5xiZXJkdXJjaHNjaG5pdHRsaWNoXCIpICU+JSBcbiAgc2VsZWN0KDEsMiwzKVxuXG5cblxucHJpbnQoU2NobGF1YmlfU2NobHVtcGYpXG5gYGAifQ== -->
 <pre class="r"><code>
 IQ_data_extended&lt;-IQ_data %&gt;% 
-  mutate(lower_IQ =  IQ &lt;= 85,
-         high_IQ = IQ &gt;116 &amp; IQ &lt;130,
-         mid_IQ = !lower_IQ &amp; !high_IQ)
+  mutate(lower_IQ =  IQ &lt;= 84,
+         high_IQ = IQ &gt;= 116 &amp; IQ &lt;130,
+          mid_IQ = !lower_IQ &amp; !high_IQ)
 
 ## Ifelse-Funktion
 
 IQ_data_extended&lt;-IQ_data_extended %&gt;% 
 mutate(verbal = ifelse(lower_IQ,&#39;low&#39;,&#39;mid&#39;),
        verbal = ifelse(high_IQ,&#39;high&#39;, verbal)) %&gt;%
-      select(-contains(&#39;iq_&#39;))
+      select(-c(lower_IQ, high_IQ))
 
 
 ## cut-funktion
 
-IQ_data_tidy$Category &lt;- cut(IQ_data_tidy$IQ, breaks = c(-Inf, 84,115, 130), 
-    labels =c(&quot;unterdurchschnittlich&quot;, &quot;durchschnittlich&quot;, &quot;überdurchschnittlich&quot;), right = TRUE)
+IQ_data_tidy$Category &lt;- cut(IQ_data_tidy$IQ,
+                             breaks = c(-Inf, 84,115, Inf), 
+                            labels =c(&quot;unterdurchschnittlich&quot;, &quot;durchschnittlich&quot;, &quot;überdurchschnittlich&quot;), right = TRUE)
 
+#cut(shower_data$showerTime, ## Datensatz, wichtig: Welche Daten sollen aufgeteilt werden?
+#    breaks = c(0, 3, 10, Inf), ## In welche Abschnitte soll geteilt werden?
+#    labels = c(&quot;Sportduscher&quot;, &quot;Normalduscher&quot;, &quot;Dauerduscher&quot;)) ## wie sollen die Kategorien benannt werden?
 
-Schlaubi_Schlumpf &lt;-IQ_data_tidy %&gt;% 
-  select(1,2,3) %&gt;% 
+str(IQ_data_tidy)
+
+Schlaubi_Schlumpf &lt;-IQ_data_tidy %&gt;%  ##Fehler bitte ausbessern
+  select(1,2,3) %&gt;% ## Fehler: Nicht erst select und dann filter! 
   filter(Category == &quot;überdurchschnittlich&quot;)
+
+## Richtige Variante:
+
+Schlaubi_Schlumpf&lt;- IQ_data_tidy %&gt;% 
+  filter(Category == &quot;Überdurchschnittlich&quot;) %&gt;% 
+  select(1,2,3)
+
 
 
 print(Schlaubi_Schlumpf)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Aufgabe 4</p>
+<p>gesamten Datensatz in absteigender Reihenfolge des IQs ausgeben</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5JUV9kYXRhX3NvcnRpZXJ0PC1JUV9kYXRhX3RpZHkgJT4lIGFycmFuZ2UoZGVzYyhJUSkpXG5cbmBgYCJ9 -->
+<pre class="r"><code>
+IQ_data_sortiert&lt;-IQ_data_tidy %&gt;% arrange(desc(IQ))
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Kovarianz- und Korrelationsmatrix erstellen</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuS292YXJpYW56bWF0cml4PC0gSVFfZGF0YV9zb3J0aWVydCAlPiUgXG4gICAgICAgICAgICAgICAgICAgICAgc2VsZWN0KDQsNSw2LDcpICU+JSAjIyBXZWxjaGUgU3BhbHRlbiB3ZXJkZW4gYmVuw7Z0aWd0IFxuICAgICAgICAgICAgICAgICAgICAgIGNvdigpXG5cbktvcnJlbGF0aW9uc21hdHJpeDwtIElRX2RhdGFfc29ydGllcnQgJT4lIFxuICAgICAgICAgICAgICAgICAgICAgIHNlbGVjdCg0LDUsNiw3KSAlPiUgXG4gICAgICAgICAgICAgICAgICAgICAgY29yKClcbmBgYCJ9 -->
+<pre class="r"><code>Kovarianzmatrix&lt;- IQ_data_sortiert %&gt;% 
+                      select(4,5,6,7) %&gt;% ## Welche Spalten werden benötigt 
+                      cov()
+
+Korrelationsmatrix&lt;- IQ_data_sortiert %&gt;% 
+                      select(4,5,6,7) %&gt;% 
+                      cor()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlR1dG9yaXVtIFNlc3Npb24gMyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KZGF0ZTogIjEwLTEyLTIwMjAiDQpkYWlseSBxdW90ZTogInllYWggeWVhaCB5ZWFoLi4uIHBhcnR5IHBhcnR5IHBhcnR5Ig0KLS0tDQoNCsOcYnVuZyAzDQoNCkF1ZmdhYmUgMToNCi0gRXJzdGVsbGVuIFNpZSBlaW5lbiB0aWJibGUgbWl0IGZvbGdlbmRlbiBTcGFsdGVuIGluIFINCg0KYGBge3J9DQojIyBFcnN0bWFsIGRpZSBWZWt0b3JlbiBlcnN0ZWxsZW4NCg0KVlBOdW1iZXI8LSBjKDE6MTAwKQ0KDQpzZXg8LSAgc2FtcGxlKGMoIm0iLCAiZiIpLCBzaXplID0gMTAwLCByZXBsYWNlID0gVFJVRSkgIyMgc2FtcGxlKGMoVmVrdG9yIG1pdCBkZW4gV2VydGVuLCBkaWUgenVmw6RsbGlnIHNlaW4gc29sbGVuKQ0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyMgc2l6ZSA9IHdpZSB2aWVsZSBFbGVtZW50ZT8sIHJlcGxhY2UgPSBtaXQgenVyw7xja2xlZ2VuIChUID0gSmEpDQoNCmFnZTwtIHNhbXBsZShjKDE4OjMwKSwgc2l6ZT0xMDAsIHJlcGxhY2UgPSBUKQ0KDQp2ZXJiYWxfc2NvcmU8LSBzYW1wbGUoYygxOjkpLCBzaXplPTEwMCwgVCkNCg0KbG9naWNfc2NvcmU8LSBzYW1wbGUoYygxOjkpLCAxMDAsIFQpDQoNCg0KIyMgZXJzdG1hbCB0aWR5dmVyc2UgbGFkZW4hDQpsaWJyYXJ5KHRpZHl2ZXJzZSkNCg0KIyMgZGFubiB0aWJibGUgZXJzdGVsbGVuDQoNCklRX2RhdGE8LSB0aWJibGUoVlBOdW1iZXIsIHNleCwgYWdlLCB2ZXJiYWxfc2NvcmUsIGxvZ2ljX3Njb3JlKQ0KYGBgDQoNCkRhcyBHYW56ZSBnZWh0IG5hdMO8cmxpY2ggYXVjaCBpbiBlaW5lbSBCZWZlaGw6DQoNCmBgYHtyfQ0KSXFfZGF0YV9pbl9LdXJ6PC0gdGliYmxlKFZQTnVtYmVyX3Nob3J0ID0gKGMoMToxMDApKSwNCiAgICAgICAgICAgICAgICAgICAgICAgICBzZXhfc2hvcnQgPSBzYW1wbGUoYygiZiIsICJtIiksIDEwMCwgVCksDQogICAgICAgICAgICAgICAgICAgICAgICAgYWdlX3Nob3J0ID0gc2FtcGxlKGMoMTg6MzApLCBzaXplID0gMTAwLCByZXBsYWNlID0gVCksDQogICAgICAgICAgICAgICAgICAgICAgICAgdmVyYmFsX3Njb3JlX3Nob3J0ID0gc2FtcGxlKGMoMTo5KSwgc2l6ZSA9IDEwMCwgVCksDQogICAgICAgICAgICAgICAgICAgICAgICAgbG9naWNfc2NvcmVfc2hvcnQgPSBzYW1wbGUoYygxOjkpLDEwMCxUKSkNCmBgYA0KIA0KIE5vY2htYWwga3VyeiDDnGJlcmJsaWNrIHZlcnNjaGFmZmVuOg0KIA0KYGBge3J9DQoNCnN1bW1hcnkoSXFfZGF0YV9pbl9LdXJ6KQ0KDQpgYGANCiANCkF1ZmdhYmUgMjoNCkbDvGdlbiBTaWUgZm9sZ2VuZGUgenVzw6R0emxpY2hlbiBWZWt0b3JlbiBoaW56dQ0KDQpgYGB7cn0NCiMjIEVyc3RtYWwgTWl0dGVsd2VydCB2b24gYmVpZGVuDQptZWFucyA8LSAoSVFfZGF0YSR2ZXJiYWxfc2NvcmUrSVFfZGF0YSRsb2dpY19zY29yZSkvMg0KDQojIyBadW0gRGF0ZW5zYXR6IGhpbnp1ZsO8Z2VuDQpJUV9kYXRhJHN0YW5pbmVfSVE8LSBtZWFucw0KDQojIyBvZGVyIGdsZWljaA0KSVFfZGF0YSRzdGFuaW5lX0lRPC0gKElRX2RhdGEkdmVyYmFsX3Njb3JlK0lRX2RhdGEkbG9naWNfc2NvcmUpLzINCg0KIyMjIyMjIyMjIHp3ZWl0ZSBWYXJpYW50ZSAjIyMjDQoNCklRX2RhdGEgPC0gSVFfZGF0YSAlPiUgDQogIG11dGF0ZShzdGFuaW5lX0lRID0gKHZlcmJhbF9zY29yZSsgbG9naWNfc2NvcmUpLzIpDQoNCmBgYA0KDQpWb24gc3RhbmluZV9JUSBpbiBJUQ0KDQpgYGB7cn0NCnpfc2NvcmU8LSBzY2FsZShJUV9kYXRhJHN0YW5pbmVfSVEpDQoNCklRPC0gel9zY29yZSAqIDE1ICsgMTAwDQoNCklRX2RhdGEkSVE8LSBJUQ0KDQojIyMjIyMjIG9kZXIgdGlkeXZlcnNlLVZhcmlhbnRlICMjIw0KDQpJUV9kYXRhX3RpZHkgPC0gSXFfZGF0YV9pbl9LdXJ6ICU+JSANCiAgbXV0YXRlKHN0YW5pbmVfSVEgPSAodmVyYmFsX3Njb3JlX3Nob3J0ICsgbG9naWNfc2NvcmVfc2hvcnQpLzIsIA0KICAgICAgICAgIElRID0gKHN0YW5pbmVfSVEgLSA1KS8xLjk2LA0KICAgICAgICAgIElRID0gcm91bmQoSVEgKiAxNSArIDEwMCkpDQpgYGANCg0KDQpBdWZnYWJlIDM6DQoNCkxvZ2lzY2hlIEluZGl6aWVydW5nDQoNCmBgYHtyfQ0KDQpJUV9kYXRhX2V4dGVuZGVkPC1JUV9kYXRhICU+JSANCiAgbXV0YXRlKGxvd2VyX0lRID0gIElRIDw9IDg1LA0KICAgICAgICAgaGlnaF9JUSA9IElRID4xMTYgJiBJUSA8MTMwLA0KICAgICAgICAgbWlkX0lRID0gIWxvd2VyX0lRICYgIWhpZ2hfSVEpDQoNCiMjIElmZWxzZS1GdW5rdGlvbg0KDQpJUV9kYXRhX2V4dGVuZGVkPC1JUV9kYXRhX2V4dGVuZGVkICU+JSANCm11dGF0ZSh2ZXJiYWwgPSBpZmVsc2UobG93ZXJfSVEsJ2xvdycsJ21pZCcpLA0KICAgICAgIHZlcmJhbCA9IGlmZWxzZShoaWdoX0lRLCdoaWdoJywgdmVyYmFsKSkgJT4lDQogICAgICBzZWxlY3QoLWNvbnRhaW5zKCdpcV8nKSkNCg0KDQojIyBjdXQtZnVua3Rpb24NCg0KSVFfZGF0YV90aWR5JENhdGVnb3J5IDwtIGN1dChJUV9kYXRhX3RpZHkkSVEsIGJyZWFrcyA9IGMoLUluZiwgODQsMTE1LCAxMzApLCANCiAgICBsYWJlbHMgPWMoInVudGVyZHVyY2hzY2huaXR0bGljaCIsICJkdXJjaHNjaG5pdHRsaWNoIiwgIsO8YmVyZHVyY2hzY2huaXR0bGljaCIpLCByaWdodCA9IFRSVUUpDQoNCg0KU2NobGF1YmlfU2NobHVtcGYgPC1JUV9kYXRhX3RpZHkgJT4lIA0KICBzZWxlY3QoMSwyLDMpICU+JSANCiAgZmlsdGVyKENhdGVnb3J5ID09ICLDvGJlcmR1cmNoc2Nobml0dGxpY2giKQ0KDQoNCnByaW50KFNjaGxhdWJpX1NjaGx1bXBmKQ0KYGBgDQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlR1dG9yaXVtIFNlc3Npb24gMyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KZGF0ZTogIjEwLTEyLTIwMjAiDQpkYWlseSBxdW90ZTogInNvbWV0aW1lcyB0YWtpbmcgdGltZSBpcyBhY3R1YWxseSBhIHNob3J0Y3V0Ig0KLS0tDQoNCsOcYnVuZyAzDQoNCkF1ZmdhYmUgMToNCi0gRXJzdGVsbGVuIFNpZSBlaW5lbiB0aWJibGUgbWl0IGZvbGdlbmRlbiBTcGFsdGVuIGluIFINCg0KYGBge3J9DQojIyBFcnN0bWFsIGRpZSBWZWt0b3JlbiBlcnN0ZWxsZW4NCg0KVlBOdW1iZXI8LSBjKDE6MTAwKQ0KDQpzZXg8LSAgc2FtcGxlKGMoIm0iLCAiZiIpLCBzaXplID0gMTAwLCByZXBsYWNlID0gVFJVRSkgIyMgc2FtcGxlKGMoVmVrdG9yIG1pdCBkZW4gV2VydGVuLCBkaWUgenVmw6RsbGlnIHNlaW4gc29sbGVuKQ0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyMgc2l6ZSA9IHdpZSB2aWVsZSBFbGVtZW50ZT8sIHJlcGxhY2UgPSBtaXQgenVyw7xja2xlZ2VuIChUID0gSmEpDQoNCmFnZTwtIHNhbXBsZSgxODozMCwgc2l6ZT0xMDAsIHJlcGxhY2UgPSBUKQ0KDQp2ZXJiYWxfc2NvcmU8LSBzYW1wbGUoYygxOjkpLCBzaXplPTEwMCwgVCkNCg0KbG9naWNfc2NvcmU8LSBzYW1wbGUoYygxOjkpLCAxMDAsIFQpDQoNCg0KIyMgZXJzdG1hbCB0aWR5dmVyc2UgbGFkZW4hDQpsaWJyYXJ5KHRpZHl2ZXJzZSkNCg0KIyMgZGFubiB0aWJibGUgZXJzdGVsbGVuDQoNCklRX2RhdGE8LSB0aWJibGUoVlBOdW1iZXIsIHNleCwgYWdlLCB2ZXJiYWxfc2NvcmUsIGxvZ2ljX3Njb3JlKQ0KYGBgDQoNCkRhcyBHYW56ZSBnZWh0IG5hdMO8cmxpY2ggYXVjaCBpbiBlaW5lbSBCZWZlaGw6DQoNCmBgYHtyfQ0KSXFfZGF0YV9pbl9LdXJ6PC0gdGliYmxlKFZQTnVtYmVyX3Nob3J0ID0gKGMoMToxMDApKSwNCiAgICAgICAgICAgICAgICAgICAgICAgICBzZXhfc2hvcnQgPSBzYW1wbGUoYygiZiIsICJtIiksIDEwMCwgVCksDQogICAgICAgICAgICAgICAgICAgICAgICAgYWdlX3Nob3J0ID0gc2FtcGxlKGMoMTg6MzApLCBzaXplID0gMTAwLCByZXBsYWNlID0gVCksDQogICAgICAgICAgICAgICAgICAgICAgICAgdmVyYmFsX3Njb3JlX3Nob3J0ID0gc2FtcGxlKGMoMTo5KSwgc2l6ZSA9IDEwMCwgVCksDQogICAgICAgICAgICAgICAgICAgICAgICAgbG9naWNfc2NvcmVfc2hvcnQgPSBzYW1wbGUoYygxOjkpLDEwMCxUKSkNCmBgYA0KIA0KIE5vY2htYWwga3VyeiDDnGJlcmJsaWNrIHZlcnNjaGFmZmVuOg0KIA0KYGBge3J9DQoNCnN1bW1hcnkoSXFfZGF0YV9pbl9LdXJ6KQ0Kc3RyKElxX2RhdGFfaW5fS3VyeikNCg0KYGBgDQogDQpBdWZnYWJlIDI6DQpGw7xnZW4gU2llIGZvbGdlbmRlIHp1c8OkdHpsaWNoZW4gVmVrdG9yZW4gaGluenUNCg0KYGBge3J9DQojIyBFcnN0bWFsIE1pdHRlbHdlcnQgdm9uIGJlaWRlbg0KDQpJUV9kYXRhJHZlcmJhbF9zY29yZSAjIyBEYXRlbnNhdHokU3BhbHRlDQoNCm1lYW5zIDwtIChJUV9kYXRhJHZlcmJhbF9zY29yZStJUV9kYXRhJGxvZ2ljX3Njb3JlKS8yDQoNCiMjIFp1bSBEYXRlbnNhdHogaGluenVmw7xnZW4NCklRX2RhdGEkc3RhbmluZV9JUTwtIG1lYW5zDQoNCiMjIG9kZXIgZ2xlaWNoDQpJUV9kYXRhJHN0YW5pbmVfSVEgPC0gKElRX2RhdGEkdmVyYmFsX3Njb3JlK0lRX2RhdGEkbG9naWNfc2NvcmUpLzINCg0KIyMjIyMjIyMjIHp3ZWl0ZSBWYXJpYW50ZSAjIyMjDQoNCklRX2RhdGE8LUlRX2RhdGEgJT4lIA0KICBtdXRhdGUoc3RhbmluZV9JUSA9ICh2ZXJiYWxfc2NvcmUrIGxvZ2ljX3Njb3JlKS8yKQ0KDQpgYGANCg0KVm9uIHN0YW5pbmVfSVEgaW4gSVENCg0KYGBge3J9DQp6X3Njb3JlPC0gc2NhbGUoSVFfZGF0YSRzdGFuaW5lX0lRKSAjI1otVHJhbnNmb3JtYXRpb24gbWl0IHNjYWxlKCkNCg0KSVE8LSB6X3Njb3JlICogMTUgKyAxMDANCg0KSVFfZGF0YSRJUTwtIElRDQoNCiMjIyMjIyMgb2RlciB0aWR5dmVyc2UtVmFyaWFudGUgIyMjDQoNCklRX2RhdGFfdGlkeSA8LSBJcV9kYXRhX2luX0t1cnogJT4lIA0KICBtdXRhdGUoc3RhbmluZV9JUSA9ICh2ZXJiYWxfc2NvcmVfc2hvcnQgKyBsb2dpY19zY29yZV9zaG9ydCkvMiwgDQogICAgICAgICAgSVEgPSBzY2FsZShzdGFuaW5lX0lRKSwNCiAgICAgICAgICBJUSA9IHJvdW5kKElRICogMTUgKyAxMDApKQ0KYGBgDQoNCg0KQXVmZ2FiZSAzOg0KDQpMb2dpc2NoZSBJbmRpemllcnVuZw0KDQpgYGB7cn0NCg0KSVFfZGF0YV9leHRlbmRlZDwtSVFfZGF0YSAlPiUgDQogIG11dGF0ZShsb3dlcl9JUSA9ICBJUSA8PSA4NCwNCiAgICAgICAgIGhpZ2hfSVEgPSBJUSA+PSAxMTYgJiBJUSA8MTMwLA0KICAgICAgICAgIG1pZF9JUSA9ICFsb3dlcl9JUSAmICFoaWdoX0lRKQ0KDQojIyBJZmVsc2UtRnVua3Rpb24NCg0KSVFfZGF0YV9leHRlbmRlZDwtSVFfZGF0YV9leHRlbmRlZCAlPiUgDQptdXRhdGUodmVyYmFsID0gaWZlbHNlKGxvd2VyX0lRLCdsb3cnLCdtaWQnKSwNCiAgICAgICB2ZXJiYWwgPSBpZmVsc2UoaGlnaF9JUSwnaGlnaCcsIHZlcmJhbCkpICU+JQ0KICAgICAgc2VsZWN0KC1jKGxvd2VyX0lRLCBoaWdoX0lRKSkNCg0KDQojIyBjdXQtZnVua3Rpb24NCg0KSVFfZGF0YV90aWR5JENhdGVnb3J5IDwtIGN1dChJUV9kYXRhX3RpZHkkSVEsDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgIGJyZWFrcyA9IGMoLUluZiwgODQsMTE1LCBJbmYpLCANCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBsYWJlbHMgPWMoInVudGVyZHVyY2hzY2huaXR0bGljaCIsICJkdXJjaHNjaG5pdHRsaWNoIiwgIsO8YmVyZHVyY2hzY2huaXR0bGljaCIpLCByaWdodCA9IFRSVUUpDQoNCiNjdXQoc2hvd2VyX2RhdGEkc2hvd2VyVGltZSwgIyMgRGF0ZW5zYXR6LCB3aWNodGlnOiBXZWxjaGUgRGF0ZW4gc29sbGVuIGF1ZmdldGVpbHQgd2VyZGVuPw0KIyAgICBicmVha3MgPSBjKDAsIDMsIDEwLCBJbmYpLCAjIyBJbiB3ZWxjaGUgQWJzY2huaXR0ZSBzb2xsIGdldGVpbHQgd2VyZGVuPw0KIyAgICBsYWJlbHMgPSBjKCJTcG9ydGR1c2NoZXIiLCAiTm9ybWFsZHVzY2hlciIsICJEYXVlcmR1c2NoZXIiKSkgIyMgd2llIHNvbGxlbiBkaWUgS2F0ZWdvcmllbiBiZW5hbm50IHdlcmRlbj8NCg0Kc3RyKElRX2RhdGFfdGlkeSkNCg0KU2NobGF1YmlfU2NobHVtcGYgPC1JUV9kYXRhX3RpZHkgJT4lICAjI0ZlaGxlciBiaXR0ZSBhdXNiZXNzZXJuDQogIHNlbGVjdCgxLDIsMykgJT4lICMjIEZlaGxlcjogTmljaHQgZXJzdCBzZWxlY3QgdW5kIGRhbm4gZmlsdGVyISANCiAgZmlsdGVyKENhdGVnb3J5ID09ICLDvGJlcmR1cmNoc2Nobml0dGxpY2giKQ0KDQojIyBSaWNodGlnZSBWYXJpYW50ZToNCg0KU2NobGF1YmlfU2NobHVtcGY8LSBJUV9kYXRhX3RpZHkgJT4lIA0KICBmaWx0ZXIoQ2F0ZWdvcnkgPT0gIsOcYmVyZHVyY2hzY2huaXR0bGljaCIpICU+JSANCiAgc2VsZWN0KDEsMiwzKQ0KDQoNCg0KcHJpbnQoU2NobGF1YmlfU2NobHVtcGYpDQpgYGANCg0KQXVmZ2FiZSA0DQoNCmdlc2FtdGVuIERhdGVuc2F0eiBpbiBhYnN0ZWlnZW5kZXIgUmVpaGVuZm9sZ2UgZGVzIElRcyBhdXNnZWJlbg0KDQpgYGB7cn0NCg0KSVFfZGF0YV9zb3J0aWVydDwtSVFfZGF0YV90aWR5ICU+JSBhcnJhbmdlKGRlc2MoSVEpKQ0KDQpgYGANCg0KS292YXJpYW56LSB1bmQgS29ycmVsYXRpb25zbWF0cml4IGVyc3RlbGxlbg0KDQpgYGB7cn0NCktvdmFyaWFuem1hdHJpeDwtIElRX2RhdGFfc29ydGllcnQgJT4lIA0KICAgICAgICAgICAgICAgICAgICAgIHNlbGVjdCg0LDUsNiw3KSAlPiUgIyMgV2VsY2hlIFNwYWx0ZW4gd2VyZGVuIGJlbsO2dGlndCANCiAgICAgICAgICAgICAgICAgICAgICBjb3YoKQ0KDQpLb3JyZWxhdGlvbnNtYXRyaXg8LSBJUV9kYXRhX3NvcnRpZXJ0ICU+JSANCiAgICAgICAgICAgICAgICAgICAgICBzZWxlY3QoNCw1LDYsNykgJT4lIA0KICAgICAgICAgICAgICAgICAgICAgIGNvcigpDQpgYGANCg0K</div>
 
 
 
