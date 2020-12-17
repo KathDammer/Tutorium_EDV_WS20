@@ -1,0 +1,90 @@
+---
+title: "Tutorium Session 4"
+output: html_notebook
+date: "17-12-2020"
+daily quote:
+---
+
+Was ist ein Factor?
+
+- Variable mit 2 Informationen:
+1. Level
+2. Label
+
+- im Prinzip "Kategorisierung" verschiedener anderer Vektoren im Datensatz
+Beispiel:
+
+```{r}
+
+booklist <- tibble(title = c("The Colour of Magic", "Mort", "Guards! Guards!", "Men at Arms", "Hogfather", "Night Watch", "Raising Steam", 
+                              "Thud", "Unseen Academicals", "Monstrous Regiment"),
+                    type = c("paperback", "paperback", "hardcover", "paperback", "hardcover", "hardcover", "paperback", "hardcover",
+                             "paperback", "hardcover"),
+                    price = c(9.99, 9.99, 14.99, 10.99, 15.99, 14.99, 8.99, 15.99, 9.99, 19.99))
+
+
+
+
+class(booklist$type)
+
+## als factor umkodiert
+
+booklist$type <- as.factor(booklist$type)
+
+class(booklist$type)
+
+## Level: 2
+## Label: Paperback, Hardcover
+```
+
+- das Ganze geht auch numerisch (0,1 oder 1,2,3 ...)
+- Label immer, um es verständlicher zu machen (statt 0 und 1, männlich und weiblich)
+
+
+cut-Funktion
+
+```{r}
+## neuer Vektor für tibble
+
+booklist$class <- cut(booklist$price, ##Datensatz, wichtig: Welche Daten sollen aufgeteilt werden?
+                      breaks = c(-Inf, 9.99, 14.99, Inf), ## In welche Abschnitte soll geteilt werden?
+                      labels = c("low budget", "mid budget", "high budget"),## wie sollen Kategorien benannt werden?
+                      right = T) 
+
+
+```
+
+Daten einlesen
+
+```{r}
+library(tidyverse)
+read_csv()
+
+
+```
+
+Deskriptive Kennwerte
+
+```{r}
+## summarise Funktion
+
+booklist %>% 
+  summarise(Mittelwert = mean(price))
+
+
+## geordnet nach Gruppen
+
+booklist %>% 
+  group_by(type) %>% 
+  summarise(Mean = mean(price))
+
+
+## Häufigkeit
+
+booklist %>% 
+  group_by(type) %>% 
+  count()
+
+
+```
+

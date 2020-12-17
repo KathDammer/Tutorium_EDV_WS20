@@ -1,0 +1,53 @@
+---
+title: "Allgemeine Tipps"
+output: html_notebook
+---
+
+Tipps:
+
+1. Google
+
+- besser auf Englisch
+- Anfang mit "r" -> "r rename values"
+- Autovervollständigung nutzen
+- Fehlercodes aus Console kopieren
+
+2. Hilfe bei Fehlern
+
+- Google ;)
+- Fehlercodes aus Konsole kopieren (am besten auch, wenn ihr andere Leute um Hilfe bittet)
+- Screenshots sind nett -> Fehlermeldungen sind netter
+- evtl. auch komplettes Script verschicken
+- Stack Overflow
+- interne Hilfe in RStudio
+
+```{r}
+help(mean) ##Funktion, nach der gesucht wird
+```
+
+3. Wenn was nicht funktioniert, was funktionieren sollte
+
+- don't panic!
+- Kurz aufstehen, Kaffee/Tee trinken, halbe Stunde was anderes machen, dann wieder draufschauen
+- Rubberduck debugging (Script einem Freund/ Freundin/ Teddybären/ Quietscheente Schritt für Schritt erklären)
+- Google
+
+4. Ausprobieren
+
+- Im seltensten Fall geht was dabei kaputt
+- Internet löschen noch weniger
+- Zur Not "extra" script öffnen und da probieren -> was funktioniert, wird ins Hauptscript übernommen
+
+5. Nette Links
+
+https://r-intro.tadaa-data.de/book/
+
+http://www.cookbook-r.com/
+
+6. Netter Weihnachtslink zur Motivation
+
+https://www.youtube.com/watch?v=z9xwXJvXBIw
+
+7. Niedlicher Link
+
+https://gph.is/1ABWLle
